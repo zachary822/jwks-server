@@ -74,6 +74,7 @@ executable jwks-server
                       directory,
                       filepath,
                       scotty,
+                      wai-extra,
                       aeson,
                       bytestring,
                       base64-bytestring,

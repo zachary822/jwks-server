@@ -6,6 +6,7 @@ module Main where
 import Control.Monad
 import Lib.File
 import Lib.Types
+import Network.Wai.Middleware.RequestLogger
 import Options.Applicative
 import System.Directory
 import System.FilePath
@@ -40,5 +41,7 @@ main = do
       >>= readKeys
 
   scotty port $ do
+    middleware logStdoutDev
+
     get "/.well-known/jwks.json" $ do
       json $ JWKS{..}
