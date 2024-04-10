@@ -54,7 +54,7 @@ rsaFromASN1
       : xs
     ) =
     let inner = either strError rsaFromASN1 $ decodeASN1' BER (bitArrayGetData bs)
-        strError = Left . ("rsaFromASN1: RSA.PrivateKey: " ++) . show
+        strError = Left . ("rsaFromASN1: RSA.PublicKey: " ++) . show
      in either Left (\(k, _) -> Right (k, xs)) inner
 rsaFromASN1 _ = Left "rsaFromASN1: unexpected format"
 
