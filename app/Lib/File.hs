@@ -13,7 +13,6 @@ import Data.ASN1.Encoding
 import Data.ASN1.Types
 import Data.ByteString qualified as BS
 import Data.ByteString.Base64.URL
-import Data.Foldable
 import Data.Maybe
 import Data.PEM
 import Data.Text.Encoding (decodeUtf8)
